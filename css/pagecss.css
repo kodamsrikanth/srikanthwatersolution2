@@ -1,0 +1,1959 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap'); */
+
+:root{
+  --black:#111;
+  --white:#fff;
+  --light-color:#666;
+  --light-bg:#eee;
+  --main-color: #4C84FF; 
+  --border: 0.5rem solid #4C84FF;  
+  --box-shadow:0 1rem 1.5rem rgba(0,0,0,.3);
+}
+
+*{
+
+  font-family: 'Poppins', sans-serif;
+   /* font-family: 'Nunito', sans-serif; */
+   margin:0; padding:0;
+   box-sizing: border-box;
+   text-transform: capitalize;
+   outline: none; border:none;
+   text-decoration: none;
+   transition:all .3s cubic-bezier(.38,1.15,.7,1.12);
+
+}
+
+*::selection{
+   background-color: var(--main-color);
+   color: var(--white);
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+   scroll-padding-top: 5rem;
+}
+
+body{
+   background: var(--light-bg);
+}
+
+section{
+   padding:2rem 10%;
+}
+
+.headings {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-size: 3.5rem;
+  color:var(--white);
+}
+
+.headings span{
+  background: var(--main-color);
+  color:var(--white);
+  padding:.5rem 3rem;
+  text-transform: uppercase;
+}
+
+/* header section starts */
+.header {
+  position: fixed;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  box-shadow: var(--box-shadow);
+}
+
+.header .navbar.nav-1 .flex {
+  padding: 1rem 5%;
+  background-color: var(--black);
+}
+
+.header .navbar.nav-2 .flex {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.header .navbar.nav-1 {
+  border-bottom: 2px solid var(--black);
+}
+
+.header .navbar.nav-2 {
+  background-color: var(--white);
+}
+
+.header .navbar .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo img {
+  height: 8rem;
+}
+
+.header .navbar .flex ul {
+  list-style: none;
+}
+
+.header .navbar .flex ul li {
+  float: left;
+  position: relative;
+}
+
+.header .navbar .flex .icons div {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  background: var(--main-color);
+  color: var(--white);
+  border-radius: .5rem;
+  margin-left: .3rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.header .navbar .flex ul li a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  color: #111;
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.header .navbar .flex ul li a:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+
+.header .navbar .flex ul li .location-container {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  color: var(--black);
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.header .navbar .flex ul li .location-container:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+
+.header .navbar .flex .search-btn {
+  font-size: 2rem;
+  color: var(--black);
+  background-color: var(--white);
+  cursor: pointer;
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  border-radius: .5rem;
+  background: var(--main-color);
+  color: var(--white);
+  text-align: center;
+}
+
+.header .navbar .flex ul li a i {
+  margin-left: 1rem;
+}
+
+.header .navbar .flex ul li ul {
+  position: absolute;
+  width: 17rem;
+  left: 0;
+}
+
+.header .navbar .flex ul li ul li {
+  width: 100%;
+  box-shadow: var(--box-shadow);
+}
+
+.header .navbar .flex ul li ul li a {
+  display: none;
+}
+
+.header .navbar .flex ul li:hover ul li a {
+  display: block;
+}
+
+#menu-btn {
+  font-size: 2.5rem;
+  color: var(--black);
+  display: none;
+  background: var(--main-color);
+  cursor: pointer;
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  border-radius: .5rem;
+  color: var(--white);
+  text-align: center;
+}
+
+#search-box {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+#menu-close-btn {
+  display: none;
+}
+
+/* header section ends */
+
+/* search-btn-container starts here */
+
+.search-btn-container {
+  position: fixed;
+  /* top: 8.5rem; */
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: calc(100vh - 8.5rem);
+  background-color: var(--white);
+  overflow-y: scroll;
+  display: none; 
+}
+
+.search-btn-container.active {
+  display: block;
+}
+
+.search-btn-container::-webkit-scrollbar {
+  width: 1rem;
+}
+
+.search-btn-container::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+.search-btn-container::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  /* border-radius: 5rem; */
+}
+
+.search-btn-container .products-container {
+  -webkit-animation: fadeUp .4s linear;
+          animation: fadeUp .4s linear;
+}
+
+.search-btn-container .products-container .box-container{
+
+  gap:1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 8rem;
+}
+
+.search-btn-container .products-container .box-container .box{
+  background-color: var(--white);
+  border-radius: .5rem;
+  padding:2rem;
+}
+
+.search-btn-container .products-container .box-container .box .title{
+  font-size: 2rem;
+  color: var(--black);
+  text-transform: capitalize;
+}
+
+.search-btn-container .products-container .box-container .box .flex{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.search-btn-container .products-container .box-container .flex a{
+  background-color: var(--white);
+  border-radius: .5rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.5rem;
+  background-color: var(--light-bg);
+}
+
+
+.search-btn-container .products-container .box-container .flex a:hover{
+  background-color: var(--main-color);
+  color: var(--white);
+}
+
+@-webkit-keyframes fadeUp {
+  0% {
+    -webkit-transform: translateY(5rem);
+            transform: translateY(5rem);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    -webkit-transform: translateY(5rem);
+            transform: translateY(5rem);
+    opacity: 0;
+  }
+}
+/* search-btn-container ends here */
+
+/* Contact popup section styles */
+#contactPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#contactPopup.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contact-popup {
+  padding: 2rem 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.popup-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  border: var(--border);
+}
+
+.popup-box {
+  border: .1rem solid rgba(0,0,0,.2);
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  background: #fff;
+  overflow: hidden;
+  width: 40rem;
+}
+
+.popup-content {
+  padding: 1.5rem;
+}
+
+.popup-header {
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.popup-header h3 {
+  font-size: 2.5rem;
+  color: #111;
+  font-weight: 900;
+  font-family: var(--font-family-Nunito);
+}
+
+.contact-popup-btn {
+  display: block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: var(--yellow);
+  border: var(--border);
+  color: var(--black);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.contact-popup-btn:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+
+#contactPopup .close-popup-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  border-radius: .5rem;
+  background: var(--main-color);
+  color: #fff;
+  font-size: 4rem;
+  text-align: center;
+}
+
+/* Contact popup section styles */
+
+/*  social popup box  section starts (This code for when we click on social meidia button in header section. then this box will open in popup effect) starts here */
+
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#popup.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.location-popup {
+  padding: 2rem 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.location-popup .box-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.location-popup .box-container .box {
+  border: var(--border);
+  /* border-radius: .5rem; */
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+  background: var(--white);
+  overflow: hidden;
+  width: 40rem;
+}
+
+.location-popup .box-container .box .content {
+  padding: 1.5rem;
+}
+
+.location-popup .box-container .box .content i {
+  color: var(--main-color);
+  margin-right: 1rem;
+}
+
+.location-popup .box-container .box .content i:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+
+.location-popup .box-container .box .content .location {
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.location-popup .box-container .box .content .location h3 {
+  font-size: 2rem;
+  color: #111;
+  font-weight: 900;
+  font-family: var(--font-family-Nunito);
+}
+
+.location-popup .box-container .box .content .box-container-2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  padding: 0.5rem;
+}
+
+.location-popup .box-container .box .content .box-container-2 .box-2 {
+  border-radius: .5rem;
+}
+
+.location-popup .box-container .box .content .box-container-2 .box-2 .flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  animation: fadeUp .4s linear;
+}
+
+.location-popup .box-container .box .content .box-container-2 .box-2 .flex a {
+  background-color: var(--main-color);
+  /* border-radius: .5rem; */
+  padding: 0.4rem 1.5rem;
+  font-size: 2rem;
+}
+
+.location-popup .box-container .box .content .box-container-2 .box-2 .flex a span {
+  color: var(--white);
+}
+
+.location-popup .box-container .box .content .box-container-2 .box-2 .flex a:hover {
+  background: none;
+  border: var(--border);
+}
+
+.location-popup .box-container .box .content .box-container-2 .box-2 .flex a:hover span {
+  color: var(--main-color);
+}
+
+#popup .social-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  border-radius: .5rem;
+  background: var(--main-color);
+  color: var(--white);
+  font-size: 4rem;
+  text-align: center;
+}
+
+/*  social-poup ends here */
+
+/* ro-service-expert-btn section start */
+
+#ro-service-expert-btn {
+  position: fixed;
+  font-size: 5rem;
+  background: var(--main-color);
+  color: var(--white);
+  border-radius: 5rem;
+  height: 8rem;
+  width: 8rem;
+  text-align: center;
+  line-height: 8rem;
+  bottom: 5rem;
+  right: 2rem;
+  z-index: 1000;
+  cursor: pointer;
+  box-shadow: 0 .5rem 1rem rgba(2, 1, 1, .3);
+}
+
+#ro-service-expert-btn.fa-times {
+  transform: rotate(-180deg);
+}
+
+@-webkit-keyframes pulse {
+  0% { -webkit-transform: scale(1); }
+  50% { -webkit-transform: scale(1.1); }
+  100% { -webkit-transform: scale(1); }
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+/* ro-service-expert-btn section ends */
+
+
+/* ro-service-popup section starts here */
+
+#ro-service-popup {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.8);
+display: none;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+}
+
+.ro-service-popup {
+padding: 2rem 2%;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+.ro-service-popup .popup-container {
+display: flex;
+flex-wrap: wrap;
+}
+
+.ro-service-popup .popup-container .popup-box {
+border: var(--border);
+overflow: hidden;
+background: var(--white);
+width: 40rem;
+}
+
+.ro-service-popup .popup-container .popup-box .popup-title {
+padding: 1rem;
+font-size: 2rem;
+color: var(--white);
+background: var(--main-color);
+text-transform: capitalize;
+text-align: center;
+}
+
+.ro-service-popup .popup-container .popup-box .popup-about {
+text-align: center;
+padding: 0rem 1.5rem;
+}
+
+.ro-service-popup .popup-container .popup-box .popup-about img {
+height: 15rem;
+width: 15rem;
+border-radius: 50%;
+object-fit: cover;
+margin: 1rem 0;
+border: var(--border);
+}
+
+.ro-service-popup .popup-container .popup-box .popup-about h3 {
+color: var(--orange);
+font-size: 2rem;
+}
+
+.ro-service-popup .popup-container .popup-box .popup-about .popup-social {
+padding: 1rem 0;
+}
+
+.ro-service-popup .popup-container .popup-box .popup-about .popup-social a {
+height: 5rem;
+line-height: 5rem;
+width: 5rem;
+border-radius: 50%;
+border: .2rem solid var(--main-color);
+color: var(--main-color);
+font-size: 2rem;
+margin: 0 .1rem;
+}
+
+.ro-service-popup .popup-container .popup-box .popup-about .popup-social a:hover {
+background: var(--main-color);
+color: var(--white);
+}
+
+.ro-service-popup .popup-container .popup-box .popup-content {
+padding: 0;
+}
+
+.ro-service-popup .popup-container .popup-box .popup-content .popup-location {
+padding: 0.5rem 0;
+text-align: center;
+}
+
+.ro-service-popup .popup-container .popup-box .popup-content .popup-location h3 {
+font-size: 2rem;
+color: #111;
+font-weight: 900;
+font-family: var(--font-family-Nunito);
+}
+
+
+.popup-call-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.popup-call-to-action-btn {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px, rgba(14, 30, 37, 0.32) 0px 2px 16px;
+    color: var(--black);
+    background: var(--white);
+    text-decoration: none;
+    margin: 0.2rem;
+    border: var(--border);
+    animation: shake 0.5s infinite;
+
+  animation: shake 0.5s infinite;
+}
+
+.popup-call-to-action-btn:hover {
+  background-color: var(--main-color);
+  color: var(--white);
+}
+
+#ro-service-popup .popup-close-btn {
+position: absolute;
+top: 10px;
+right: 10px;
+height: 5rem;
+width: 5rem;
+line-height: 5rem;
+border-radius: .5rem;
+background: var(--main-color);
+color: var(--white);
+font-size: 5rem;
+text-align: center;
+}
+
+/* ro-service-popup section ends here */
+
+
+/* water purifier section starts here */
+
+.water-purifier-section {
+  padding: 1rem 2%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.water-purifier-image {
+  flex: 1 1 42rem;
+  width: 100%;
+  height: 42rem;
+}
+
+.water-purifier-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: var(--border);
+}
+
+.contact-information {
+  flex: 1 1 42rem;
+  padding: 1rem;
+  background: var(--white);
+  border: var(--border);
+}
+
+.contact-information .water-purifier-name {
+  text-transform: capitalize;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.contact-information .location-details {
+  text-align: left;
+}
+
+
+.contact-information .location-details .buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.contact-information .location-details .buttons p{
+font-weight: 900;
+color: var(--main-color);
+}
+
+.contact-information .location-details .buttons p:hover{
+text-decoration: underline;
+  }
+
+.contact-information .location-details .price-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: var(--border);
+}
+
+.contact-information .location-details .price-info .price {
+  color: var(--blue);
+  font-size: 6rem;
+}
+
+.contact-information .location-details .price-info .price span {
+  color: var(--black);
+  font-size: 2rem;
+  text-decoration: line-through;
+}
+
+.contact-information .location-details .contact-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: var(--border);
+}
+
+.contact-information .location-details .contact-us .price {
+  color: var(--black);
+  font-size: 2.8rem;
+}
+
+.contact-information .location-details p {
+  font-size: 1.8rem;
+  color: var(--black);
+}
+
+.contact-information .location-details p .brands-we-service {
+  font-size: 1.8rem;
+  color: var(--black);
+}
+
+.contact-information .location-details p .available-places {
+  font-size: 1.8rem;
+  color: var(--black);
+}
+
+.contact-information .location-details .more-content {
+  display: none;
+}
+
+.contact-information .location-details .read-more-btn,
+.contact-information .location-details .read-less-btn {
+  background: var(--main-color);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.8rem;
+}
+
+.contact-information .location-details .read-less-btn {
+  display: none; 
+}
+
+.contact-information .location-details .available-places {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.social-media-buttons {
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.social-media-buttons a {
+  height: 7rem;
+  width: 7rem;
+  line-height: 7rem;
+  font-size: 3rem;
+  color: var(--main-color);
+  border: 1.6px solid var(--main-color);
+  margin: 0.3rem;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.social-media-buttons a:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+
+.social-media-buttons a p {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  margin-top: -2rem;
+  font-weight: bold;
+}
+
+.social-media-buttons h3 {
+  color: var(--black);
+  font-size: 1.6rem;
+}
+
+.contact-information h3 {
+  font-size: 3rem;
+  text-transform: none;
+  color: var(--black);
+}
+
+.contact-information .buttons {
+  display: flex;
+  gap: 1rem;
+  text-align: center;
+}
+
+.contact-information .buttons .btn {
+  flex: 1;
+  font-size: 1.5rem;
+}
+
+/* water purifier section starts here */
+
+/* water-purifier-details section starts  */
+
+.water-purifier-details .detail-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.water-purifier-details .detail-box {
+  border: var(--border);
+  overflow: hidden;
+  background: var(--white);
+  flex: 1 1 35rem;
+  border: var(--border);
+}
+
+.water-purifier-details .detail-box .detail-info .buttons {
+  display: flex;
+  gap: 1rem;
+  padding: 0.2rem;
+}
+
+.water-purifier-details .detail-box .detail-info .buttons .btn {
+  flex: 1;
+  font-size: 1.5rem;
+}
+
+.water-purifier-details .detail-box:hover .detail-info {
+  bottom: 0;
+}
+
+.water-purifier-details .detail-box .detail-info .technical-specs,
+.water-purifier-details .detail-box .detail-info .gift-details,
+.water-purifier-details .detail-box .detail-info .description-text {
+  padding: 1rem;
+}
+
+.water-purifier-details .detail-box .detail-info .technical-specs p,
+.water-purifier-details .detail-box .detail-info .gift-details p,
+.water-purifier-details .detail-box .detail-info .description-text p {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  /* padding: 0 1rem; */
+}
+
+.water-purifier-details .detail-box .detail-info .technical-details,
+.water-purifier-details .detail-box .detail-info .free-gift,
+.water-purifier-details .detail-box .detail-info .product-description {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: var(--main-color);
+}
+
+.water-purifier-details .detail-box .detail-info .section-title {
+  color: var(--white);
+  font-size: 2.2rem;
+  text-transform: uppercase;
+}
+
+   .heading {
+    text-align: center;
+    justify-content: center;
+  
+  }
+  
+  .heading span {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: var(--main-color);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    border: var(--border);
+  }
+
+
+/* water-purifier-details section starts */
+
+
+/* products section starts here */
+
+.products-heading {
+  text-align: center;
+  justify-content: center;
+  /* padding: 2rem; */
+  padding-bottom: 2rem;
+}
+
+.products-heading span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: var(--main-color);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  border: var(--border);
+  background-color: var(--white);
+}
+
+.products-gallery {
+  padding: 2rem 2%;
+  /* padding-bottom: 0; */
+}
+
+.products-gallery .image-box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 9fr));
+  gap: 2rem;
+}
+
+.products-gallery .image-box-container .image-box {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  border: var(--border);
+  background-color: var(--white);
+
+}
+
+.products-gallery .image-box-container .image-box .purifier-image {
+  overflow: hidden;
+  width: 100%;
+  height: 32rem;
+  height: auto;
+}
+
+.products-gallery .image-box-container .image-box .purifier-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.products-gallery .image-box-container .image-box .purifier-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* products starts here */
+
+/* service-category section starts here */
+
+.service-category {
+  padding: 2rem 2%; 
+}
+
+
+.service-category .box-container{
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(32rem, 1fr))[auto-fit];
+   grid-template-columns: repeat(auto-fit, minmax(12rem, 2fr));
+   gap: 0.5rem;
+   /* margin: -2rem 0;  */
+}
+
+.service-category .box-container .box {
+  text-align: center;
+
+}
+
+.service-category .box-container .box img {
+  height: 10rem;
+ width: 10rem;
+}
+
+.service-category .box-container .box h1 {
+  font-size: 1.5rem;
+ color: rgb(25, 0, 251);
+ cursor: pointer;
+ line-height: 1.2;
+
+}
+
+.service-category .box-container .box h1:hover {
+ text-decoration: underline;
+ cursor: pointer;
+}
+
+.service-category .box-container .box p {
+  font-size: 1.5rem;
+  color: dark;
+  cursor: pointer;
+}
+
+
+.service-category .box-container .box p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* service-category section ends here */
+
+
+  
+/* products section starts here */
+
+.heading123 {
+  width: 100%;
+  margin:0 auto;
+  padding-top: 1.5rem;
+}
+
+.heading123 span{
+  font-size: 2rem;
+  padding:1rem 4.5rem;
+  color:#fff;
+  background: #4C84FF;
+  display: inline-block;
+}
+
+.related-water-purifiers {
+  padding: 0.5rem 2%;
+  padding-right: 0%;
+}
+ 
+ .related-water-purifiers .box-container {
+   display: grid;
+   -ms-grid-columns: (minmax(4rem, 3fr))[auto-fit];
+   grid-template-columns: repeat(auto-fit, minmax(4rem,3fr));
+   
+ }
+ 
+ .related-water-purifiers .slide {
+   background: #fff;
+   border: var(--border);
+   border-top-left-radius: var(--border-top-left-radius);
+   border-top-right-radius: var(--border-top-right-radius);
+   border-bottom-left-radius: var(--border-bottom-left-radius);
+   border-bottom-right-radius: var(--border-bottom-right-radius); 
+ }
+
+ .related-water-purifiers .slide .image {
+   width: 100%;
+   height: auto;
+   overflow: hidden;
+   background-color: #eee;
+   border-radius: 0.5rem;
+
+ }
+
+ .related-water-purifiers .slide .image img {
+      width: 100%;
+      height: 100%;
+      background-color: #eee;
+ }
+
+ .related-water-purifiers .slide .image video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.related-water-purifiers .slide .info {
+  /* padding: 0.5rem 0; */
+  padding: 0%;
+}
+
+.related-water-purifiers .slide .info h3 {
+  padding: 0 0.5rem;
+  font-size: 2rem;
+  color: var(--blue);
+  line-height: 1.2;
+  /* display: flex;
+  align-items: center;  */
+  /* background-color: red; */
+}
+
+.related-water-purifiers .slide .info p {
+  font-size: 1.8rem;
+  color: #666;
+  line-height: 1.4;
+  padding: 0 0.5rem;
+}
+
+
+.related-water-purifiers .slide .info .subInfo {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  padding: 1rem;
+  border-top: var(--border);
+
+  border-bottom: var(--border);
+}
+
+.related-water-purifiers .slide .box {
+  padding: 0.5rem 1rem;
+  background: var(--white);
+  text-align: center;
+  border-bottom-left-radius: 3rem;
+}
+
+
+.related-water-purifiers .slide .info .subInfo .price {
+  color: #ff3300;
+  font-size: 1.8rem;
+}
+
+.related-water-purifiers .slide .info .subInfo .price span {
+  color: #666;
+  font-size: 1.5rem;
+  text-decoration: line-through;
+}
+
+.related-btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  background: var(--yellow);
+  border: var(--border);
+  color: var(--black);
+  font-size: 2rem;
+  border: var(--border);
+}
+
+.related-btn:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+
+.related-water-purifiers .swiper-slide {
+   width: 15%; 
+ }
+ 
+ .related-water-purifiers .swiper-slide {
+   scroll-behavior: smooth;
+   width: 15%;
+ }
+ 
+ .related-water-purifiers .swiper-slide:nth-child(2n) {
+   scroll-behavior: smooth;
+   width: 15%;
+ }
+ 
+ .related-water-purifiers .swiper-slide:nth-child(3n) {
+   scroll-behavior: smooth;
+   width: 15%;
+ }
+ 
+ .related-water-purifiers .swiper-slide:nth-child(4n) {
+   scroll-behavior: smooth;
+   width: 15%;
+ }
+ 
+ .related-water-purifiers .swiper-slide:nth-child(5n) {
+   scroll-behavior: smooth;
+   width: 15%;
+ }
+ 
+ .related-water-purifiers .swiper-slide:nth-child(6n) {
+   scroll-behavior: smooth;
+   width: 15%;
+ }
+
+ .related-water-purifiers .slide .box{
+   padding: 0.5rem 1rem;
+   background: var(--white);
+   text-align: center;
+   border-bottom-left-radius: 3rem;
+}
+
+
+.related-water-purifiers .slide .box p{
+   font-size: 1.8rem;
+   line-height: 1.1;
+   /* padding: 0.8rem; */
+}
+
+.related-water-purifiers .slide .box p span{
+  font-size: 1.8rem;
+  /* color: #1100ff;
+  cursor: pointer; */
+}
+
+.related-water-purifiers .swiper-button-prev{
+   left: 0%;
+}
+
+.related-water-purifiers .swiper-button-next{
+   right: 0;
+}
+
+.related-water-purifiers .swiper-button-next,
+.related-water-purifiers .swiper-button-prev{
+   padding: 3rem 2rem;
+   background-color: #fff;
+   top: 50%;
+   opacity: .7;
+}
+
+.related-water-purifiers .swiper-button-next::after,
+.related-water-purifiers .swiper-button-prev::after{
+   font-size: 2rem;
+}
+
+.related-water-purifiers .swiper-button-next:hover,
+.related-water-purifiers .swiper-button-prev:hover{
+   opacity: 1;
+   background: var(--main-color);
+   color: #fff;
+}
+
+/* .related-water-purifiers section starts here */
+
+
+/* water-purifier-available-places section starts  */
+
+.water-purifier-available-places-heading {
+  text-align: center;
+  justify-content: center;
+  padding: 1rem;
+  /* padding-bottom: 2rem; */
+}
+
+.water-purifier-available-places-heading span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: var(--main-color);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  border: var(--border);
+  background-color: var(--white);
+}
+
+.water-purifier-available-places .detail-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.water-purifier-available-places .detail-box {
+  border: var(--border);
+  overflow: hidden;
+  background: var(--white);
+  flex: 1 1 35rem;
+  border: var(--border);
+}
+
+.water-purifier-available-places .detail-box .detail-info .buttons {
+  display: flex;
+  gap: 1rem;
+  padding: 0.2rem;
+}
+
+.water-purifier-available-places .detail-box .detail-info .buttons .btn {
+  flex: 1;
+  font-size: 1.5rem;
+}
+
+.water-purifier-available-places .detail-box:hover .detail-info {
+  bottom: 0;
+}
+
+.water-purifier-available-places .detail-box .detail-info .technical-specs,
+.water-purifier-available-places .detail-box .detail-info .gift-details,
+.water-purifier-available-places .detail-box .detail-info .description-text {
+  padding: 1rem;
+}
+
+.water-purifier-available-places .detail-box .detail-info .technical-specs p,
+.water-purifier-available-places .detail-box .detail-info .gift-details p,
+.water-purifier-available-places .detail-box .detail-info .description-text p {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  /* padding: 0 1rem; */
+}
+
+.water-purifier-available-places .detail-box .detail-info .technical-details,
+.water-purifier-available-places .detail-box .detail-info .free-gift,
+.water-purifier-available-places .detail-box .detail-info .product-description {
+  text-align: center;
+  padding: 0.5rem;
+  /* border-bottom: 0.5rem solid var(--main-color); */
+  background-color: var(--main-color);
+}
+
+.water-purifier-available-places .detail-box .detail-info .section-title {
+  color: var(--white);
+  font-size: 2.2rem;
+  text-transform: uppercase;
+}
+
+/* water-purifier-available-placess section starts */
+
+/* CSS for Map Location Section starts here */
+
+.map-location {
+  padding: 0.5rem 2%;
+}
+
+.map-location-title {
+  background: var(--main-color);
+  font-size: 2.5rem;
+  padding: 1rem 0;
+  color: var(--white);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.map-location-container {
+  flex: 1 1 30rem;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  position: relative;
+  overflow: hidden;
+  border: 0.5rem solid var(--main-color);
+}
+
+.google-map {
+  height: 40rem;
+  width: 100%;
+}
+
+/* CSS for Map Location Section ends here */
+
+/* join-section section start section */
+
+.join-section .row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.join-button {
+  flex: 1 1 30rem;
+  margin: 1rem;
+  padding: 3rem 1rem;
+  background: var(--primary-bg-color);
+  border: var(--border);
+  text-align: center;
+}
+
+.whatsapp-icon,
+.google-icon {
+  height: 6rem;
+  width: 6rem;
+  line-height: 6rem;
+  border-radius: 50%;
+  font-size: 3rem;
+  background: red;
+  color: var(--main-color);
+}
+
+.join-button h3 {
+  color: var(--primary-text-color);
+  padding: 1rem 0;
+  font-size: 2rem;
+}
+
+.join-button p a {
+  display: inline;
+  font-size: 1.5rem;
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+
+.join-button p a:hover {
+  border: var(--border);
+  color: var(--main-color);
+  background: none;
+}
+
+/* join-section section end section */
+
+
+/* products-slider starts here */
+
+.products-slider-heading {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+}
+
+.products-slider-heading span {
+  font-size: 2rem;
+  padding: 0.5rem 4.5rem;
+  color: #fff;
+  background: #4C84FF;
+  display: inline-block;
+}
+
+.products-slider {
+  padding: 0rem 2%;
+  padding-bottom: 0;
+}
+
+.products-slider .box-container {
+  display: grid;
+  -ms-grid-columns: (minmax(4rem, 3fr))[auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(4rem, 3fr));
+
+}
+
+.products-slider .slide {
+  background: #fff;
+  border: var(--border);
+  border-top-left-radius: var(--border-top-left-radius);
+  border-top-right-radius: var(--border-top-right-radius);
+  border-bottom-left-radius: var(--border-bottom-left-radius);
+  border-bottom-right-radius: var(--border-bottom-right-radius);
+}
+
+.products-slider .slide .image {
+  height: 32rem;
+  width: 100%;
+  overflow: hidden;
+  border-top-right-radius: var(--border-top-right-radius);
+  border-bottom: 0.5rem solid #4C84FF;
+}
+
+.products-slider .slide .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.swiper-slide {
+  width: 22%;
+}
+
+.swiper-slide {
+  scroll-behavior: smooth;
+  width: 22%;
+}
+
+.swiper-slide:nth-child(2n) {
+  scroll-behavior: smooth;
+  width: 22%;
+}
+
+.swiper-slide:nth-child(3n) {
+  scroll-behavior: smooth;
+  width: 22%;
+}
+
+.swiper-slide:nth-child(4n) {
+  scroll-behavior: smooth;
+  width: 22%;
+}
+
+.swiper-slide:nth-child(5n) {
+  scroll-behavior: smooth;
+  width: 22%;
+}
+
+.swiper-slide:nth-child(6n) {
+  scroll-behavior: smooth;
+  width: 22%;
+}
+
+.products-slider .slide .box {
+  padding: 0.5rem 1rem;
+  background: var(--white);
+  text-align: center;
+  border-bottom-left-radius: 3rem;
+}
+
+
+.products-slider .slide .box p {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.swiper-button-prev {
+  left: 0%;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  padding: 3rem 2rem;
+  background-color: #fff;
+  top: 50%;
+  opacity: .7;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 2rem;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  opacity: 1;
+  background: #130f40;
+}
+
+.btn {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 1rem 1rem;
+  background: var(--yellow);
+  border: var(--border);
+  color: var(--black);
+  font-size: 2rem;
+  border: var(--border);
+  border-top-left-radius: var(--border-top-left-radius);
+  border-top-right-radius: var(--border-top-right-radius);
+  border-bottom-left-radius: var(--border-bottom-left-radius);
+  border-bottom-right-radius: var(--border-bottom-right-radius);
+}
+
+.btn:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+
+/* products-slider section starts here */
+
+/* more-purifier btn section starts   */
+
+.more-purifier-btn {
+  text-align: center;
+}
+
+.more-purifier-btn .btn {
+  display: inline-block;
+  padding: .7rem 3rem;
+  border-radius: 5rem;
+  border: .5rem solid var(--main-color);
+  color: var(--main-color);
+  cursor: pointer;
+  font-size: 1.7rem;
+  background-color: var(--white);
+}
+
+.more-purifier-btn .btn:hover {
+  transform: scale(1.1);
+  background-color: var(--main-color);
+  color: var(--white);
+}
+
+/* more-purifier btn section ends   */
+
+
+ /* footer section starts here  */
+
+ .footer {
+  border-top: 0.5rem solid var(--main-color);
+  padding-bottom: 5rem;
+}
+
+.footer .box-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2.2rem;
+  color: var(--blue);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box p {
+  font-size: 1.6rem;
+  color: var(--black);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--black);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover {
+  color: var(--main-color);
+}
+
+.footer .box-container .box a:hover i {
+  padding-right: 2rem;
+}
+
+.footer .box-container .box a i {
+  padding-right: .5rem;
+  color: var(--main-color);
+}
+
+.footer .bottom {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.footer .bottom .share {
+  margin: 1.5rem 0;
+}
+
+.footer .bottom .share a {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  margin: 0 .3rem;
+  color: var(--main-color);
+  border: 0.2rem solid var(--main-color);
+  background-color: var(--white);
+}
+
+.footer .bottom .share a:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+
+/* footer section starts here */
+
+/* call to action section starts  */
+.call-to-action {
+  background: var(--white);
+  border-top: var(--border);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--black);
+  z-index: 800; 
+}
+
+.call-to-action .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.call-to-action .btn {
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px, rgba(14, 30, 37, 0.32) 0px 2px 16px;
+  color: var(--black);
+  background: var(--white);
+  text-decoration: none;
+  margin: 0.5rem;
+  border: var(--border);
+  animation: shake 0.5s infinite;
+}
+
+.call-to-action .btn:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* call to action section ends  */
+
+/* loader section starts */
+
+  .page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(245, 247, 248, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+.loader {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    background-color: var(--main-color);
+    padding: 2rem;
+    color: var(--white);
+}
+
+/* loader section ends */
+
+
+/* media queries  */
+
+@media (max-width:1200px){
+
+  section{
+      padding:3rem 5%;
+   }
+  
+  }
+  
+  @media (max-width:991px){
+  
+  html{
+        font-size: 55%;
+  }
+  
+  section{
+    padding:3rem 2rem;
+  }  
+  
+  }
+  
+  @media (max-width:768px){
+  
+  #menu-btn{
+    display: inline-block;
+  }   
+  
+  }
+  
+      /* media queries  */
+  
+  @media (max-width:991px){
+  
+  html{
+     font-size: 55%;
+  }
+  
+  }
+  
+  @media (max-width:768px){
+   
+  #menu-btn{
+      display: inline-block;
+  }   
+  
+  .header .navbar .menu{
+    position: absolute;
+    top:115%; right: 2rem;
+    box-shadow: var(--box-shadow);
+    width: 30rem;
+    border: var(--border);
+    background: var(--white);
+    transform: scale(0);
+    opacity: 0;
+    transform-origin: top right;
+    transition: none;
+    padding-bottom: 1rem;
+  }
+    
+  .header .navbar .menu.active{
+    transform: scale(1);
+    opacity: 1;
+    transition: .2s ease-out;
+  }   
+  
+  .menu-close-btn {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    cursor: pointer;
+    font-size: 3.5rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    text-align: center;
+    color: var(--white);
+    z-index: 1001;
+  }  
+  
+  .header .navbar .menu ul li{
+    width: 100%;
+    position: relative;
+    padding: 0rem 2rem;
+  } 
+  
+  .header .navbar .menu ul li a{
+    width: 100%;
+    display: inline-block;
+    padding: .7rem 3rem;
+    margin-top: 1rem;
+    border: var(--border);
+    color: var(--black);
+    cursor: pointer;
+    font-size: 1.7rem;
+    text-align: center;
+  } 
+  
+  .header .navbar .menu ul li ul{
+    position: relative;
+    width: 100%;
+  } 
+  
+  .header .navbar .menu ul li ul li a{
+    padding-left: 4rem;
+    background-color: var(--black);
+    color: var(--white);
+  }
+  
+  }
+
+
+  @media (max-width:450px) {
+  
+    html{
+      font-size: 50%;
+   }
+  
+   .heading{
+      font-size: 2.5rem;
+   }
+  
+   header .logo img {
+    height: 8rem;
+  }
+
+  .water-purifier-section .water-purifier-image {
+    height: 25rem;
+  }
+
+  /* products-gallery section starts here */
+
+  .products-gallery .image-box-container {
+    -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 6fr));
+  }
+  
+    /* products-gallery section ends here */
+
+  /* related-water-purifiers section starts here */
+
+  .related-water-purifiers .swiper-slide {
+  width: 45%;
+}
+
+.related-water-purifiers .swiper-slide {
+  scroll-behavior: smooth;
+  width: 45%;
+}
+.related-water-purifiers .swiper-slide:nth-child(2n) {
+  scroll-behavior: smooth;
+  width: 45%;
+}
+
+.related-water-purifiers .swiper-slide:nth-child(3n) {
+  scroll-behavior: smooth;
+  width: 45%;
+}
+
+.related-water-purifiers .swiper-slide:nth-child(4n) {
+  scroll-behavior: smooth;
+  width: 45%;
+}
+
+.related-water-purifiers .swiper-slide:nth-child(5n) {
+  scroll-behavior: smooth;
+  width: 45%;
+}
+
+.related-water-purifiers .swiper-slide:nth-child(6n) {
+  scroll-behavior: smooth;
+  width: 45%;
+}
+
+/* related-water-purifiersr section ends here */
+
+}
